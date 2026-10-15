@@ -87,10 +87,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent('Hola La Chica de las Pizzas, quisiera pedir unas minipizzas calientitas')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 bg-[#ae1d14] hover:bg-[#d1382a] text-white px-7 py-4 rounded-full font-bold text-sm sm:text-base shadow-lg shadow-[#ae1d14]/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center"
+                className="inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-[#ae1d14] hover:bg-[#d1382a] text-white px-5 sm:px-7 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base shadow-lg shadow-[#ae1d14]/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center w-full sm:w-auto max-w-full"
               >
-                <MessageCircle className="w-5 h-5 fill-current" />
-                <span>Pedir por WhatsApp ({WHATSAPP_DISPLAY})</span>
+                <MessageCircle className="w-5 h-5 fill-current shrink-0" />
+                <span className="truncate">Pedir por WhatsApp ({WHATSAPP_DISPLAY})</span>
               </a>
 
               <button

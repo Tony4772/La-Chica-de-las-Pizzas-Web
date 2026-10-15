@@ -26,7 +26,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contactar por WhatsApp"
-          className="w-13 h-13 sm:w-14 sm:h-14 bg-[#914c00] hover:bg-[#ff9b43] text-white rounded-full shadow-2xl flex items-center justify-center relative active:scale-90 transition-all border-2 border-white"
+          className="w-12 h-12 sm:w-14 sm:h-14 bg-[#914c00] hover:bg-[#ff9b43] text-white rounded-full shadow-2xl flex items-center justify-center relative active:scale-90 transition-all border-2 border-white"
         >
           <MessageCircle className="w-6 h-6 fill-current" />
           <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-[#ae1d14] rounded-full ring-2 ring-white" />

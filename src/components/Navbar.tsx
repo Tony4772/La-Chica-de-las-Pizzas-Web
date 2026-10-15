@@ -36,18 +36,18 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#fff8f6]/92 backdrop-blur-xl border-b border-[#e3beb9]/50 shadow-[0_2px_12px_rgba(33,30,29,0.04)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
         
         {/* Brand Zone */}
         <div 
           onClick={() => handleLinkClick('inicio')}
-          className="flex items-center gap-3 cursor-pointer group shrink-0"
+          className="flex items-center gap-2 sm:gap-3 cursor-pointer group min-w-0"
         >
-          <div className="relative">
+          <div className="relative shrink-0">
             <img
               src={BRAND_ASSETS.logo}
               alt="La Chica de las Pizzas Logo"
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-[#ae1d14]/20 group-hover:scale-105 transition-transform"
+              className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-[#ae1d14]/20 group-hover:scale-105 transition-transform"
               referrerPolicy="no-referrer"
               onError={(e) => {
                 // styled fallback if external image fails
@@ -56,11 +56,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             />
             <span className="absolute -bottom-1 -right-1 text-xs">🍕</span>
           </div>
-          <div className="flex flex-col">
-            <span className="font-headline text-lg sm:text-xl font-extrabold text-[#ae1d14] tracking-tight leading-none group-hover:text-[#d1382a] transition-colors">
+          <div className="flex flex-col min-w-0">
+            <span className="font-headline text-base sm:text-xl font-extrabold text-[#ae1d14] tracking-tight leading-none group-hover:text-[#d1382a] transition-colors truncate">
               La Chica de las Pizzas
             </span>
-            <span className="text-xs font-semibold text-[#914c00] tracking-wide mt-0.5">
+            <span className="text-[10px] sm:text-xs font-semibold text-[#914c00] tracking-wide mt-0.5 truncate">
               Arequipa • Sabor Artesanal
             </span>
           </div>
@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         {/* Action Controls Zone */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           
           {/* View mode toggle (Responsive vs Mobile Screen Simulator) */}
           <button
@@ -111,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Cart Counter Button */}
           <button
             onClick={onOpenCart}
-            className="relative flex items-center justify-center w-11 h-11 rounded-full bg-[#f4ecea] hover:bg-[#e8e1df] text-[#1e1b1a] transition-all"
+            className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#f4ecea] hover:bg-[#e8e1df] text-[#1e1b1a] transition-all shrink-0"
             aria-label="Abrir pedido actual"
           >
             <ShoppingBag className="w-5 h-5 text-[#ae1d14]" />
@@ -122,25 +122,27 @@ export const Navbar: React.FC<NavbarProps> = ({
             )}
           </button>
 
-          {/* WhatsApp Direct CTA */}
+          {/* WhatsApp Direct CTA - Circular Icon on Mobile, Pill on Tablet/Desktop to never clip */}
           <a
             href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent('¡Hola La Chica de las Pizzas! Quisiera consultar por las minipizzas calientitas.')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#ae1d14] hover:bg-[#d1382a] text-white px-4 sm:px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+            aria-label={`Pedir al WhatsApp ${WHATSAPP_DISPLAY}`}
+            className="flex items-center justify-center gap-1.5 bg-[#ae1d14] hover:bg-[#d1382a] text-white w-10 h-10 sm:w-auto sm:px-4 md:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0 shrink-0"
           >
-            <MessageCircle className="w-4 h-4 fill-current" />
-            <span className="hidden md:inline">Pide al {WHATSAPP_DISPLAY}</span>
-            <span className="md:hidden">WhatsApp</span>
+            <MessageCircle className="w-5 h-5 sm:w-4 sm:h-4 fill-current shrink-0" />
+            <span className="hidden sm:inline whitespace-nowrap">
+              <span className="hidden md:inline">Pide al </span>{WHATSAPP_DISPLAY}
+            </span>
           </a>
 
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl text-[#5b403c] hover:bg-[#f4ecea] transition-colors"
+            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl text-[#5b403c] hover:bg-[#f4ecea] transition-colors shrink-0"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>

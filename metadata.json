@@ -2,5 +2,7 @@
   "name": "La Chica de las Pizzas - Arequipa",
   "description": "Minipizzas artesanales hechas con amor a solo S/ 1.00 en Arequipa para apoyar los estudios de gastronomía. Pide por WhatsApp, calcula tu antojo y sigue la ruta diaria.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
